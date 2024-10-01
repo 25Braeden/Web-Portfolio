@@ -3,23 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calculator</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-        }
-        pre {
-            background-color: #f4f4f4;
-            padding: 10px;
-            border: 1px solid #ccc;
-            overflow-x: auto;
-        }
-    </style>
+    <title>Global Replace</title>
+    <link rel="stylesheet" href="../../styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
 </head>
 <body>
-<h1>Calculator</h1>
-<pre>
+<h1>String Space Calculator</h1>
+<pre><code class="language-java">
 import java.util.Scanner;
 
 public class Calculator {
@@ -36,7 +26,7 @@ public class Calculator {
             if (input.length == 3) {
                 double firstNum = Double.parseDouble(input[0]);
                 double secondNum = Double.parseDouble(input[2]);
-                
+
                 String operation = input[1];
                 switch (operation) {
                     case "+":
@@ -51,7 +41,7 @@ public class Calculator {
                     case "/":
                         result = firstNum / secondNum;
                         break;
-                
+
                     default:
                         System.out.println("Invalid operation");
                         break;
@@ -65,6 +55,13 @@ public class Calculator {
         scanner.close();
     }
 }
-    </pre>
-</body>
-</html>
+    </code></pre>
+
+    <a href="../../classwork.html">Back to Classwork</a>
+
+    <div style="height: 50px;"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+    </body>
+    </html>
