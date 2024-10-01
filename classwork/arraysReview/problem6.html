@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 6</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+<h1>Problem 6</h1>
+<pre><code class="language-java">
+import java.util.ArrayList;
+import java.util.Random;
+public class problem6 {
+    public static void main(String[] args) {
+        BubbleSort bubbleSort = new BubbleSort();
+        ArrayList<Integer> myArray = new ArrayList<>();
+        Random random = new Random();
+
+        for (int i = 0; i < 100; i++) {
+            myArray.add(random.nextInt(200000000));
+        }
+        myArray = bubbleSort.bubbleSort(myArray);
+        int arrayRange = myArray.get(myArray.size() - 1) - myArray.get(0);
+        System.out.println(arrayRange);
+        System.out.println(myArray.get(0) + " " + myArray.get(myArray.size() - 1));
+    }
+}
+    </code></pre>
+
+<a href="../../index.html">Back to Index</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+</body>
+</html>

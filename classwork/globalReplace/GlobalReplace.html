@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Replace</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>Global Replace</h1>
+<pre>
+import java.util.ArrayList;
+import java.util.List;
+
+public class Main {
+    private static final List<String> savedText = new ArrayList<String>();
+    private static final String text = "never say never";
+
+    public static String replaceOne(String text, int i, int n, String sub) {
+        return text.substring(0, i) + sub + text.substring(i + n);
+    }
+
+    public static String replaceAll(String text, String what, String sub) {
+        String currentText = text;
+        savedText.add(text);
+        int startIndex = text.indexOf(what);
+        while(startIndex != -1) {
+            currentText = replaceOne(currentText, startIndex, what.length(), sub);
+            startIndex = currentText.indexOf(what);
+        }
+        return currentText;
+    }
+
+    public static String undoReplaceAll() {
+        if(savedText.isEmpty()) {
+            return null;
+        } else {
+            String temp = savedText.get(savedText.size() - 1);
+            savedText.remove(savedText.size() - 1);
+            return temp;
+        }
+    }
+
+    public static void main(String[] args) {
+        String modifiedSometimes = replaceAll(text, "never", "sometimes");
+        String doubleModded = replaceAll(modifiedSometimes, "say", "think");
+        String undoOnce = undoReplaceAll();
+        String undoTwo = undoReplaceAll();
+        String pleaseBeNull = undoReplaceAll();
+        System.out.println(text);
+        System.out.println(modifiedSometimes);
+        System.out.println(doubleModded);
+        System.out.println(undoOnce);
+        System.out.println(undoTwo);
+        System.out.println(pleaseBeNull);
+    }
+}
+    </pre>
+</body>
+</html>

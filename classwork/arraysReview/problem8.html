@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 8</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+<h1>Problem 8</h1>
+<pre><code class="language-java">
+import java.util.ArrayList;
+
+public class problem8 {
+
+    public static boolean foundThree(ArrayList<Integer> array) {
+        int ticker = 0;
+        for(int i = 0; i < array.size() - 1; i++) {
+            int temp = array.get(i);
+            for (int j = 0; j < array.size() - 1; j++) {
+                if(array.get(j) == temp && j != i) {
+                    ticker++;
+                    if (ticker == 2) {
+                        return true;
+                    }
+                }
+            }
+            ticker = 0;
+        }
+        return false;
+    }
+
+    public static void main(String[] args) {
+        ArrayList<Integer> myArray = new ArrayList<>();
+        myArray.add(1);
+        myArray.add(12);
+        myArray.add(12);
+        myArray.add(13);
+        myArray.add(11);
+        myArray.add(12);
+        myArray.add(15);
+        boolean found = foundThree(myArray);
+        System.out.println(found);
+    }
+}
+    </code></pre>
+
+<a href="../../index.html">Back to Index</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+</body>
+</html>

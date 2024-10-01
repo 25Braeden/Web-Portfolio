@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Splitter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+        pre {
+            background-color: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+            overflow-x: auto;
+        }
+    </style>
+</head>
+<body>
+<h1>Word Splitter</h1>
+<pre>
+import java.util.Scanner;
+
+public class WordSplitter {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter a sentence: ");
+
+        String userInput = scanner.nextLine();
+
+        String[] withQuotation = userInput.trim().split("\\s+");
+
+        String clearedInput = userInput.replaceAll("[^a-zA-Z0-9]", " ");
+        String[] words = clearedInput.split("\\s+");
+
+        for (String word : words) {
+            System.out.println(word);
+        }
+
+        for (String word : withQuotation) {
+            System.out.println(word);
+        }
+
+        scanner.close();
+    }
+}
+    </pre>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Problem 4</title>
+    <link rel="stylesheet" href="../../style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+</head>
+<body>
+<h1>Problem 4</h1>
+<pre><code class="language-java">
+import java.util.ArrayList;
+public class problem4 {
+
+    public static boolean checkLists (ArrayList<Integer> arr1, ArrayList<Integer> arr2) {
+        for(int i = 0; i < arr1.size(); i++) {
+            int temp = arr1.get(i);
+            for(int j = 0; j < arr2.size(); j++) {
+                if (arr2.get(j) == temp) {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+    public static void main(String[] args) {
+        ArrayList<Integer> arrayOne = new ArrayList<>();
+        ArrayList<Integer> arrayTwo = new ArrayList<>();
+        ArrayList<Integer> arrayThree = new ArrayList<>();
+        for (int i = 0; i < 10; i++) {
+            arrayOne.add(i);
+            arrayTwo.add(i + 9);
+            arrayThree.add((i + 15) * 2);
+        }
+        String output = (checkLists(arrayOne, arrayTwo)) ? "The lists share a number" : "The lists don't share a number";
+        System.out.println(output);
+        String output2 = (checkLists(arrayOne, arrayThree)) ? "The lists share a number" : "The lists don't share a number";
+        System.out.println(output2);
+    }
+}
+    </code></pre>
+
+<a href="../../index.html">Back to Index</a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-java.min.js"></script>
+</body>
+</html>
